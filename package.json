@@ -18,3 +18,17 @@
   },
   "homepage": "https://github.com/MINECRAFTGOLDFISH3/minecraftgoldfish3.github.io"
 }
+
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
