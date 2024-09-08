@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ensure gamedomain is set
     var gamedomain = 'assets.illuminating.us';
-    var gamedomain = 'https://buymeacoffee.com/bhaskargram'
 
     // Function to fetch the game list from the external HTML file
     function fetchGameList() {
