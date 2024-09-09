@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch the game list from the external HTML file
     function fetchGameList() {
-        return fetch('list.html')
+        return fetch('/main/list.html')
             .then(response => response.text())
             .catch(error => {
                 console.error('Error fetching game list:', error);
@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Flash game
                 const gameParam = extractFlashGameURL(gameUrl);
                 thumbnail = `https://${gamedomain}/flash/images/${gameParam}.png`;
-                gameLinkNew = `/project.html?url=https://${gamedomain}/flash/#game=${gameParam}`;
+                gameLinkNew = `/main/project.html?url=https://${gamedomain}/flash/#game=${gameParam}`;
             } else {
                 // HTML5 game
                 const gameLink = new URL(gameUrl).searchParams.get('url');
                 const newUrl = `https://${gamedomain}${gameLink}`; //gameLink.replace(/https:\/\/[^/]+/, `https://${gamedomain}`);
                 thumbnail = newUrl.replace(/index\.htm(l)?$/, 'cover.png');
-                gameLinkNew = `/project.html?url=${newUrl}`;
+                gameLinkNew = `/main/project.html?url=${newUrl}`;
             }
 
             const gameItem = document.createElement('div');
